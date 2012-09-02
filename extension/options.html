@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<title>LJ Watcher Options</title>
+	</head>
+
+	<body>
+
+		<fieldset>
+			<legend>LJ Watcher Options</legend>
+			Username: <input type="text" name="username" id="username" size="20" /><br />
+			Password: <input type="password" name="password" id="password" size="20" /><br />
+			Refresh interval: <select name="interval" id="interval">
+				<option value="60000">1 min</option>
+				<option value="300000">5 min</option>
+				<option value="900000">15 min</option>
+				<option value="1800000">30 min</option>
+				<option value="3600000">1 hour</option>
+			</select>
+		</fieldset>
+
+		<button id="button">Save</button>
+		<div id="status"></div>
+		<script src="options.js" type="text/javascript"></script>
+	</body>
+</html>

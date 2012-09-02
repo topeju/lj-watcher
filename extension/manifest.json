@@ -1,0 +1,30 @@
+{
+	"name": "LiveJournal Watcher",
+	"version": "1.0.6",
+	"manifest_version": 2,
+	"description": "Watches for new posts and comments on your LiveJournal friends page.",
+	"icons": {
+		"19": "icon.png",
+		"48": "icon48.png",
+		"128": "icon128.png"
+	},
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*.livejournal.com/*"],
+			"js": ["page-parser.js"]
+		}
+	],
+	"options_page": "options.html",
+	"permissions": [
+		"tabs",
+		"http://*.livejournal.com/"
+	],
+	"content_security_policy": "script-src 'self'; object-src 'self'; connect-src 'self' http://www.livejournal.com/interface/xmlrpc"
+}
