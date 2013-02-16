@@ -5,11 +5,11 @@ function newInTabs() {
 	console.log("Opening new items in tabs: " + newPosts.length + " posts, " + postsWithNewComments.length + " comments");
 	for (var i in newPosts) {
 		var p = newPosts[i];
-		chrome.tabs.create({"url": p.url+"?nc="+p.comments.toString()+"&style=mine", "active": false});
+		chrome.tabs.create({"url": p.url+"?nc="+p.comments.toString()+"&style=mine", "active": true});
 	}
 	for (var i in postsWithNewComments) {
 		var p = postsWithNewComments[i];
-		chrome.tabs.create({"url": p.url+"?nc="+p.comments.toString()+"&style=mine", "active": false});
+		chrome.tabs.create({"url": p.url+"?nc="+p.comments.toString()+"&style=mine", "active": true});
 	}
 }
 
